@@ -56,7 +56,7 @@ const GifExpertApp = () => {
       <Wrap maxW={"80rem"} spacingY={30} align={"center"} mx={"auto"}>
         {categorias.map((category) => (
           <GifGrid
-            key={category}``
+            key={category}
             category={category}
             handleCategory={handleCategory}
           />
