@@ -7,8 +7,10 @@ export const useFetchGifs = (category) => {
 
   const getImages = async () => {
     const newImages = await getGifts(category);
-    setImages(newImages);
-    setIsLoading(false);
+    setTimeout(() => {
+      setImages(newImages);
+      setIsLoading(false);
+    },1000)
   };
 
   useEffect(() => {

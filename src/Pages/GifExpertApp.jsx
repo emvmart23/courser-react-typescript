@@ -4,22 +4,14 @@ import GifGrid from "../components/GifGrid";
 import { Box, Button, Text, Wrap, WrapItem, useToast } from "@chakra-ui/react";
 import { IconTrash, IconTrashFilled } from "@tabler/icons-react";
 import "../style/App.css";
+import { getHeroesId, getOwnerHeroes } from "./Description";
 
 const GifExpertApp = () => {
-  //recuerda que el estado tiene que ir en minuscula
   const [categorias, setCategorias] = useState([]);
   const [data, setData] = useState(null);
   const toast = useToast();
   const toastIdRef = useRef(null);
   const onAddCategory = (newCategory) => {
-    //recuerda que estas agregando un string
-    // y por lo tanto si quieres agregar un campo
-    // elemento mas al array tienes que crear una constante.
-    // const newItem = 'berlith'
-    //utilziando un callback con el estado
-    // setCategorias(cat => [...categorias, newItem])
-    //utilizando directamente el array
-    //if (categorias.includes(newCategory)) return;
     setCategorias([newCategory, ...categorias]);
   };
 
@@ -40,7 +32,55 @@ const GifExpertApp = () => {
     const onlyOneCategory = categorias.filter((list) => list !== category);
     setCategorias(onlyOneCategory);
   };
- 
+
+  let activo = true;
+  const mensaje = ( !activo ) ? 'Activo' : 'Inactivo'
+  console.log()
+
+
+
+  ////
+  //  const api_key = 'dadadadadsdfsdfskfs'
+   
+  //  const peticion = fetch('gasvdvalfLFLEWFRWERWERWPRPWRPWE')
+
+  //  peticion( resp => resp.json())'https://dsaasdads'
+
+  //  const getAsync = () => new Promise((resolve) => resolve('https://dsaasdads'))
+  // getAsync()
+  //   .then(console.log)
+
+
+
+
+  const getAsync = async () => {
+    const getData = await fetch('https://dsaasdads')
+    const data = getData.json()
+    console.log(data)
+    const { url } =  data.images.orginal;
+
+    const imag = document.createElement('img');
+    imag.src = url
+    document.body.append( imag )
+
+  }
+
+
+  ///
+
+  /**
+  peticion( resp => resp.json())
+  .then ({data}) = {
+  const { url } = data.images.original
+  
+  const imag = document.createElement('img');
+  img.src = url
+
+  document.body.append( img )
+  })
+
+  .catch( console.warn )
+ */
   return (
     <Box h={"100vh"} mb={"40px"}>
       <Text as={"h1"}>GifExpertApp</Text>
