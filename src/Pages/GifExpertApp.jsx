@@ -4,7 +4,6 @@ import GifGrid from "../components/GifGrid";
 import { Box, Button, Text, Wrap, WrapItem, useToast } from "@chakra-ui/react";
 import { IconTrash, IconTrashFilled } from "@tabler/icons-react";
 import "../style/App.css";
-import { getHeroesId, getOwnerHeroes } from "./Description";
 
 const GifExpertApp = () => {
   const [categorias, setCategorias] = useState([]);
@@ -35,22 +34,6 @@ const GifExpertApp = () => {
 
   let activo = true;
   const mensaje = ( !activo ) ? 'Activo' : 'Inactivo'
-  console.log()
-
-
-
-  ////
-  //  const api_key = 'dadadadadsdfsdfskfs'
-   
-  //  const peticion = fetch('gasvdvalfLFLEWFRWERWERWPRPWRPWE')
-
-  //  peticion( resp => resp.json())'https://dsaasdads'
-
-  //  const getAsync = () => new Promise((resolve) => resolve('https://dsaasdads'))
-  // getAsync()
-  //   .then(console.log)
-
-
 
 
   const getAsync = async () => {
@@ -65,22 +48,6 @@ const GifExpertApp = () => {
 
   }
 
-
-  ///
-
-  /**
-  peticion( resp => resp.json())
-  .then ({data}) = {
-  const { url } = data.images.original
-  
-  const imag = document.createElement('img');
-  img.src = url
-
-  document.body.append( img )
-  })
-
-  .catch( console.warn )
- */
   return (
     <Box h={"100vh"} mb={"40px"}>
       <Text as={"h1"}>GifExpertApp</Text>
