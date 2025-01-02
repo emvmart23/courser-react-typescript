@@ -13,8 +13,8 @@ import { Loading } from "./loading";
 import { IconTrashFilled } from "@tabler/icons-react";
 
 const GifGrid = ({ category, handleCategory} ) => {
-  const { images, isLoading, setImages } = useFetchGifs(category);
-  console.log(category)
+  const { images, isLoading } = useFetchGifs(category);
+  
   // const deleteItemCategory = (id) => {
   //   const delImages = images.filter((del) => del.id != id);
   //   setImages(delImages);

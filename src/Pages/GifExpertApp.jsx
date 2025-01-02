@@ -1,13 +1,12 @@
 import { useRef, useState } from "react";
 import AddCategory from "../components/AddCategory";
 import GifGrid from "../components/GifGrid";
-import { Box, Button, Text, Wrap, WrapItem, useToast } from "@chakra-ui/react";
+import { Box, Button, Text, Wrap, useToast } from "@chakra-ui/react";
 import { IconTrash, IconTrashFilled } from "@tabler/icons-react";
 import "../style/App.css";
 
 const GifExpertApp = () => {
   const [categorias, setCategorias] = useState([]);
-  const [data, setData] = useState(null);
   const toast = useToast();
   const toastIdRef = useRef(null);
   const onAddCategory = (newCategory) => {
@@ -31,22 +30,6 @@ const GifExpertApp = () => {
     const onlyOneCategory = categorias.filter((list) => list !== category);
     setCategorias(onlyOneCategory);
   };
-
-  let activo = true;
-  const mensaje = ( !activo ) ? 'Activo' : 'Inactivo'
-
-
-  const getAsync = async () => {
-    const getData = await fetch('https://dsaasdads')
-    const data = getData.json()
-    console.log(data)
-    const { url } =  data.images.orginal;
-
-    const imag = document.createElement('img');
-    imag.src = url
-    document.body.append( imag )
-
-  }
 
   return (
     <Box h={"100vh"} mb={"40px"}>

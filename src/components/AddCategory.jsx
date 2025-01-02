@@ -1,6 +1,6 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { IconPointerSearch } from "@tabler/icons-react";
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const AddCategory = ({ onNewCategory }) => {
   const [inputValue, setInputValue] = useState("");
